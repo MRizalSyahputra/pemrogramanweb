@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>membuat form : reloaded</title>
+    </head>
+
+    <body>
+        <h1>Studi Kasus: Validasi Input HTML5</h1>
+        <form action="" method="post">
+        <table border=0>
+
+        <tr>
+            <td>Nama    :</td>
+            <td><input type = "text" pattern="[A-Za-z ]+"name="nama" style="width: 220px;" placeholder="Isikan Nama Anda" required /></td>
+            <!--input type menentukan jenis input yang harus dimasukkan, pattern menentukan ekspresi yang harus dimasukkan, misalnya huruf, angka, atau semacamnya-->
+            <!--placeholder memberikan petunjuk bagi pengguna, required menandakan form harus diisi-->
+            <!--input type text untuk menandakan bahwa pengguna harus memasukkan input berupa teks-->
+        </tr>
+        <tr>
+            <td>Usia    :</td>
+            <td><input type = "text" name = "Angka" pattern="^(1[7-9]|[2-2][0-9]|[3-3][0])$"style="width:50px" required /> (Usia min 17-30)</td>
+            <!--peggunaan ^ dan $ untuk mendandakan awal dan akhir pola yang dicari, yang di dalam kurung untuk mengelompokkan dan menunjukkan bagian dari pola
+            akan dicocokkan-->
+            <!--width digunakan untuk mengatur lebar kolom form-->
+        </tr>
+        <tr>
+            <td>Email   :</td>
+            <td><input type = "email" name = "email" style="width: 220px;" placeholder="nama.email@host.com" required /></td>
+            <!--input type email untuk menandakan bahwa pengguna harus memasukkan input berupa email-->
+        </tr>
+        <tr>
+            <td>Web     :</td>
+            <td><input type = "url" name = "Web" style="width: 300px;" placeholder="http://" required /></td>
+            <!--input type url untuk menandakan bahwa pengguna harus memasukkan input berupa url, dan harus didahului dengan http:// atau https://-->
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type = "password" name = "Password" placeholder="Semua karakter, min.8" required /></td>
+            <!--input password untuk menandakan bahwa pengguna harus memasukkan input yang nantinya akan menjadi password, input tersebut juga akan langsung
+            disembunyikan oleh form-->
+        </tr>
+        <tr>
+            <td><input type = "submit" value = "submit"></td>
+            <!--bagian ini untuk mensubmit data-data yang telah kita masukkan-->
+        </tr>
+        </table>
+        </form>
+    </body>
+</html>
