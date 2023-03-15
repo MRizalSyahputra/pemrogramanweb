@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menggunakan media query CSS3</title>
+    <style>
+        /** Pengaturan default display none **/
+        .smartphone {
+            display: none;
+        }
+
+        /** Media query untuk smartphone 375px **/
+        @media only screen and (max-width: 375px) {
+            body {
+                background-color: yellow;
+            }
+
+            .smartphone {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Menggunakan Media Query CSS3</h3>
+    <div class="smartphone">
+        <!--memanggil class smartphone agar tampilan web berubah saat dibuka di smartphone dengan panjang maksimal 375px-->
+        <h2>Terdeteksi ukuran smartphone</h2>
+    </div>
+</body>
+
+</html>

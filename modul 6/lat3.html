@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi transisi CSS3</title>
+    <style>
+        /* Kondisi box awal */
+        .box {
+            width: 40%;
+            height: 100px;
+            background: orange;
+            border: 2px solid #212121;
+            /* Animasi lebar box */
+            -webkit-transition: width 1s ease-in-out;
+            -o-transition: width 1s ease-in-out;
+            -moz-transition: width 1s ease-in-out;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Jika rasio tampilan landscape, perlebar 100% */
+        @media (orientation:landscape) {
+            .box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <h3>transisi</h3>
+    <p>
+        coba diubah, potrait ke lanscape atau sebaliknya, terus dilihat animasinya
+    </p>
+</body>
+
+</html>
