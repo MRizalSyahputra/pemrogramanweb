@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Pixiv</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        @media (max-width: 750px) {
+            body {
+                background-color: #ffffff;
+            }
+        }
+
+        * {
+            font-family: "Helvetica";
+        }
+
+        .float-right {
+            /* untuk membuat "create an account" button bisa berada di bagian kanan*/
+            float: right;
+            margin: 20px;
+        }
+
+        .btn-half-round {
+            border-radius: 20px;
+        }
+
+        .btn-apple {
+            /* mengatur button yang akan digunakan untuk login lewat apple*/
+            background-color: black;
+            color: white;
+            padding: 10px;
+            background-image: url("pngkey.com-apple-logo-png-112773.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: auto 60%;
+            background-position-x: 25px;
+        }
+
+        .btn-google {
+            /* mengatur button yang akan digunakan untuk login lewat google*/
+            padding: 10px;
+            background-image: url("google-logo-9808.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: auto 60%;
+            background-position-x: 25px;
+        }
+
+        .btn-twitter {
+            /* mengatur button yang akan digunakan untuk login lewat twitter*/
+            padding: 10px;
+            background-image: url("logo-twitter-png-5860.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: auto 60%;
+            background-position-x: 25px;
+        }
+
+        .btn-facebook {
+            /* mengatur button yang akan digunakan untuk login lewat facebook*/
+            padding: 10px;
+            background-image: url("logo-facebookpng-32202.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: auto 60%;
+            background-position-x: 25px;
+        }
+
+        .btn-login {
+            padding: 10px;
+        }
+
+        .marginbwh {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+
+<body style="background-image: url(61212883_p0.jpg)">
+    <header class="main-header">
+        <button type="button" class="btn btn-info plus float-right">Create an account</button>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div>
+                <div class="col-md-4"
+                    style=" width: 392px; height: 750px; background-color: white; border-radius: 30px; padding: 20px; margin-top: 170px;">
+                    <!--mengatur agar bagian form bisa memiliki background warna putih alih-alih mengikuti yang ada-->
+                    <p class="marginbwh"> </p>
+                    <div class="text-center">
+                        <img src="https://s.pximg.net/accounts/assets/6bea8becc71d27cd20649ffbc047e456.svg"
+                            style="margin:auto">
+                    </div>
+                    <p class="text-center" style="font-weight: bold;">Spice up your creating process</p>
+                    <p class="marginbwh"> </p>
+
+                    <div class="form-group">
+                        <!--untuk mengisi data pengguna-->
+                        <input type="text" id="LoginComponent_userAccount" name="LoginComponent.userAccount"
+                            placeholder="Email Address or Pixiv ID" required="" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <!--untuk mengisi data pengguna-->
+                        <input type="password" id="LoginComponent_password" name="LoginComponent.password"
+                            placeholder="Password" required="" class="form-control">
+                    </div>
+                    <!--berbagai jenis button untuk berbagai fungsi-->
+                    <button type="button" class="btn btn-primary btn-block btn-half-round btn-login"
+                        type="submit">Login</button>
+                    <!--untuk submit data-->
+                    <p class="text-center"><a>Forgot Password?</a></p>
+                    <!--apabila user lupa password akunnya-->
+                    <button type="button" class="btn btn-default btn-block btn-half-round btn-apple">Continue with
+                        Apple</button>
+                    <!--apabila user ingin login menggunakan akun apple nya-->
+                    <button type="button" class="btn btn-default btn-block btn-half-round btn-google">Continue with
+                        Google</button>
+                    <!--apabila user ingin login menggunakan akun google nya-->
+                    <button type="button" class="btn btn-default btn-block btn-half-round btn-twitter">Continue with
+                        Twitter</button>
+                    <!--apabila user ingin login menggunakan akun twitter nya-->
+                    <button type="button" class="btn btn-default btn-block btn-half-round btn-facebook">Continue with
+                        Facebook</button>
+                    <!--apabila user ingin login menggunakan akun facebook nya-->
+                    <p class="marginbwh"> </p>
+                    <p class="marginbwh"> </p>
+                    <p class="marginbwh"> </p>
+                    <p class="text-center font-size">This site is protected by reCAPTCHA Enterprise and the</p>
+                    <p class="text-center"><a href="https://policies.google.com/privacy">Google privacy</a> and <a
+                            href="https://policies.google.com/terms">Terms of Services</a> apply</p>
+                    <!--jika diklik maka akan membuka hukum privasi google dan terms of service-->
+                </div>
+            </div>
+        </div>
+        <footer>
+
+        </footer>
+</body>
+
+</html>
