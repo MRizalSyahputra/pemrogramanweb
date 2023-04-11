@@ -34,7 +34,7 @@
     $alpha2 = (String) $mix2;
     var_dump($alpha2);
 
-    // untuk bentuk seperti mix2, jika mengambil data integer maka yang terdeteksi hanya angka depannya, sementara angka di belakang huruf dianggap string
+    // untuk bentuk seperti mix2, jika mengambil data integer maka yang terdeteksi hanya angka depannya, sementara angka di belakang huruf dianggap string. dengan kata lain, jika saya menuliskan basalt21314 maka int tidak akan terdeteksi
     ?>
 </body>
 </html>
