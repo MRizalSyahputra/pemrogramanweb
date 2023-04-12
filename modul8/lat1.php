@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,7 @@
 
     <p>kalimat ini ditulis dalam html</p> <!--sementara untuk kode HTML, tetap mengikuti aturan pada HTML-->
 
-    <p>yang ini pakai html <?php echo "dan yang ini dengan PHP"?> balik ke html</p> <!--bisa juga digabungkan seperti ini--> 
+    <p>yang ini pakai html <?php echo "dan yang ini dengan PHP" ?> balik ke html</p> <!--bisa juga digabungkan seperti ini-->
 </body>
 
 </html>
