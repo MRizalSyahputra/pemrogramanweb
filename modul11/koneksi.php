@@ -1,3 +1,3 @@
 <?php
-$db_con = mysqli_connect('localhost', 'root', '', 'db_pemroweb')
+$db_con = mysqli_connect('localhost', 'root', '', 'pemroweb')
     or die('koneksi gagal');
