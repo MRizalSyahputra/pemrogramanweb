@@ -47,7 +47,7 @@
         <?php
         include 'koneksi.php';
         $no = 1;
-        $data = mysqli_query($koneksi, "SELECT * FROM mahasiswa");
+        $data = mysqli_query($koneksi, "SELECT * FROM datamahasiswa");
         while ($d = mysqli_fetch_array($data)) {
         ?>
             <tr>
