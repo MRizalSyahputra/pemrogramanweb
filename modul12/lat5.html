@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>validasi</title>
+    <script type="text/javascript">
+      function konfirmasi(email) {
+        if (email.indexOf("@") != -1 && email.indexOf(".") != -1) {
+          alert("Benarkah anda akan menggunakan email ini?");
+        } else {
+          alert("Anda tidak menginputkan email dengan benar, coba lagi");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form name="test" onSubmit="konfirmasi(this.test2.value);return false">
+      <input type="text" size="20" name="test2" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

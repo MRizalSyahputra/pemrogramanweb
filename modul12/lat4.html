@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>event handler</title>
+    <script>
+      function inform() {
+        alert("Lanjutkan step berikutnya!");
+      }
+    </script>
+    <form>
+      <input type="button" name="test" value="Click" onclick="inform()" />
+    </form>
+  </head>
+  <body>
+    <form name="go">
+      <input type="radio" name="C1" onclick="document.bgColor='grey'" />
+      <input type="radio" name="C1" onclick="document.bgColor='blue'" />
+      <input type="radio" name="C1" onclick="document.bgColor='green'" />
+    </form>
+  </body>
+</html>

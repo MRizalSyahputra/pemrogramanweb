@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script type="text/javascript">
+      var a;
+      var b = false;
+
+      while (!b) {
+        a = window.prompt("Masukkan nama anda!");
+        if (a === null || a === "") {
+          break;
+        }
+        window.alert("Anda telah memilih nama " + a);
+        b = window.confirm("Yakin?");
+        if (!b) {
+          window.alert("Yaudah, coba masukin lagi");
+        }
+      }
+
+      window.alert("Lanjut aja masbro");
+    </script>
+  </head>
+  <body></body>
+</html>
