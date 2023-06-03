@@ -18,7 +18,7 @@
         <table>
             <tr>
                 <td>NIM</td>
-                <td><input type="number" name="NIM"></td>
+                <td><input type="text" name="NIM"></td>
             </tr>
             <tr>
                 <td>Nama</td>
