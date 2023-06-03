@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    require 'function.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    $id = $_GET["id"];
 
-<body>
-    <form action="#" method="post">
-        <label for="hapus-judul">Judul:</label>
-        <input type="text" id="hapus-judul" name="hapus-judul" required /><br /><br />
-        <input type="submit" value="Hapus buku" />
-    </form>
-</body>
-
-</html>
+    if( hapusdata($id) > 0) {
+        echo "
+            <script>
+                alert('Data berhasil dihapus!');
+                document.location.href = 'Site.php';
+            </script>
+        ";
+    } else {
+        echo "
+                <script>
+                    alert('Gagal menghapus data');
+                    document.location.href = 'Site.php';
+                </script>
+            ";
+    }
+?>
