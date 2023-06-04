@@ -1,27 +1,27 @@
 <?php
-    require 'function.php'; //menghubungkan halaman dengan file function.php
-    
-    if(isset ($_POST["submit"])) {
-        //untuk mengecek apakah input data berhasil atau tidak
-        if(tambahdata($_POST) > 0) { //saat data berhasil dimasukkan, function tambahdata akan mereturn nilai 1
-            //akan mencetak notifikasi seperti di bawah, dan diarahkan kembali ke halaman sebelumnya
-            echo "
+require 'function.php'; //menghubungkan halaman dengan file function.php
+//mengecek apakah tombol submit sudah ditekan atau belum
+if (isset($_POST["submit"])) {
+    //untuk mengecek apakah input data berhasil atau tidak
+    if (tambahdata($_POST) > 0) { //saat data berhasil dimasukkan
+        //akan mencetak notifikasi seperti di bawah, dan diarahkan kembali ke halaman sebelumnya
+        echo "
                 <script>
                     alert('Data berhasil dimasukkan!');
                     document.location.href = 'Site.php';
                 </script>
             ";
-        } else { //saat data gagal dimasukkan, function tambahdata akan mereturn nilai -1
-            //akan mencetak notifikasi seperti di bawah, dan diarahkan kembali ke halaman sebelumnya
-            echo "
+    } else { //saat data gagal dimasukkan
+        //akan mencetak notifikasi seperti di bawah, dan diarahkan kembali ke halaman sebelumnya
+        echo "
                 <script>
                     alert('Gagal memasukkan data');
                     document.location.href = 'Site.php';
                 </script>
             ";
-        }
     }
-    
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -37,12 +37,12 @@
     <p>Bingung mengenai aturan pengisian nomor seri? <a href="tatacara.html" target="_blank">Klik di sini</a></p> <!--Akan terbuka tab baru untuk menampilkan aturan pengisian-->
     <!--form untuk mengisi data buku-->
     <form action="" method="post">
-        <input type="text" id="noseri" name="noseri" placeholder="Nomor Seri" required=""> <br />
-        <input type="text" id="judul" name="judul" placeholder="Judul Buku" required=""><br />
-        <input type="text" id="pengarang" name="pengarang" placeholder="Nama Pengarang" required=""><br />
-        <input type="text" id="tahunterbit" name="tahunterbit" placeholder="Tahun Terbit" required=""><br />
-        <input type="text" id="penerbit" name="penerbit" placeholder="Penerbit" required=""><br />
-        <input type="text" id="genre" name="genre" placeholder="Genre Buku" required=""><br />
+        <input type="text" id="noseri" name="noseri" placeholder="Nomor Seri" required="" autocomplete="off"> <br />
+        <input type="text" id="judul" name="judul" placeholder="Judul Buku" required="" autocomplete="off"><br />
+        <input type="text" id="pengarang" name="pengarang" placeholder="Nama Pengarang" required="" autocomplete="off"><br />
+        <input type="text" id="tahunterbit" name="tahunterbit" placeholder="Tahun Terbit" required="" autocomplete="off"><br />
+        <input type="text" id="penerbit" name="penerbit" placeholder="Penerbit" required="" autocomplete="off"><br />
+        <input type="text" id="genre" name="genre" placeholder="Genre Buku" required="" autocomplete="off"><br />
         <button type="submit" name="submit">Tambahkan data</button>
     </form>
 

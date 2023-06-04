@@ -81,7 +81,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) { //jika pada form s
         <div class="col-md-4">
           <form id="loginForm" method="post" action="<?php ($_SERVER['PHP_SELF']); ?>">
             <div class="row mb-3">
-              <input type="text" id="username" name="username" placeholder="Username">
+              <input type="text" id="username" name="username" placeholder="Username" autocomplete="off">
             </div>
             <div class="row mb-3">
               <input type="password" id="password" name="password" placeholder="Password">
