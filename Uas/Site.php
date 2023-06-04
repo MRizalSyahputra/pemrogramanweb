@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+    if (!isset($_SESSION["login"])) { //jika belum ada session yang menandakan belum login
+      header("Location: login.php"); //kembalikan ke halaman login
+      exit;
+    }
+
 require 'function.php'; //menyambungkan halaman dengan file function.php, kurang lebih kegunaannya sama dengan include
 $buku = query("SELECT * FROM databuku ORDER BY judul ASC"); //mengambil data dari tabel databuku, serta otomatis mengurutkannya menurut judul buku secara alfabetis
 
@@ -26,6 +33,9 @@ if(isset($_POST["cari"]) ) {
 <body>
   <a href="logout.php">logout</a>
   <h1>Dashboard</h1>
+  <?php
+
+  ?>
   <br />
   <p><a href="tambah.php">Tambah Buku Baru</a><p> 
   <!--Membuka halaman baru untuk menambahkan data buku yang baru-->

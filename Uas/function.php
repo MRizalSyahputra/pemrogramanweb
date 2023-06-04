@@ -91,4 +91,40 @@
                 ";
         return query($query);
     }
+
+    function registrasi($data) {
+        global $conn;
+
+        //mengambil data dari input
+        $username = strtolower(stripslashes($data["username"]));
+        $password = mysqli_real_escape_string($conn, $data["password"]);
+        $password2 = mysqli_real_escape_string($conn, $data["password2"]);
+
+        //cek apakah username sudah ada atau belum
+        $result = mysqli_query($conn, "SELECT username FROM user WHERE
+                username = '$username';
+                ");
+        if(mysqli_fetch_assoc($result)) {
+            echo "<script>
+                    alert('Username sudah ada!');
+                </script>";
+            return false;
+        }
+
+        //cek konfirmasi password
+        if( $password !== $password2) {
+            echo "<script>
+                    alert('Password tidak sesuai!');
+                </script>";
+            return false; 
+        }
+
+        //meng-enkripsi password agar tidak terbaca di database oleh manusia
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
+        //masukkan data ke dalam database
+        mysqli_query($conn, "INSERT INTO user VALUES('', '$username', '$password')");
+        
+        return mysqli_affected_rows($conn);
+    }
 ?>

@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["login"])) { //jika belum ada session yang menandakan belum login
+    header("Location: login.php"); //kembalikan ke halaman login
+    exit;
+}
+
 require 'function.php'; //menghubungkan halaman dengan file function.php
 //mengecek apakah tombol submit sudah ditekan atau belum
 if (isset($_POST["submit"])) {

@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+    if (!isset($_SESSION["login"])) { //jika belum ada session yang menandakan belum login
+      header("Location: login.php"); //kembalikan ke halaman login
+      exit;
+    }
+
 require 'function.php'; //menghubungkan halaman dengan file function.php
 
 $id = $_GET["id"]; //mengambil id dari url yang akan digunakan untuk mengambil data mahasiswa
