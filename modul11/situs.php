@@ -1,3 +1,28 @@
+<?php
+include('koneksi.php');
+$mhs = query("SELECT * FROM datamahasiswa ORDER BY Nama ASC");
+if (isset($_POST["tambah"])) {
+    //untuk mengecek apakah input data berhasil atau tidak
+    if (tambah($_POST) > 0) { //saat data berhasil dimasukkan
+        //akan mencetak notifikasi seperti di bawah, dan diarahkan kembali ke halaman sebelumnya
+        echo "
+                <script>
+                    alert('Data berhasil dimasukkan!');
+                    document.location.href = 'situs.php';
+                </script>
+            ";
+    } else { //saat data gagal dimasukkan
+        //akan mencetak notifikasi seperti di bawah, dan diarahkan kembali ke halaman sebelumnya
+        echo "
+                <script>
+                    alert('Gagal memasukkan data');
+                    document.location.href = 'situs.php';
+                </script>
+            ";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,29 +38,28 @@
     <h5>Silahkan input datanya</h5>
     <br />
     <br />
-
-    <form method="post">
+    <!--form untuk menambahkan data baru-->
+    <form action="" method="post">
         <table>
             <tr>
                 <td>NIM</td>
-                <td><input type="text" name="NIM"></td>
+                <td><input type="text" id="NIM" name="NIM" required="" autocomplete="off"></td>
             </tr>
             <tr>
                 <td>Nama</td>
-                <td><input type="text" name="Nama"></td>
+                <td><input type="text" id="Nama" name="Nama" required="" autocomplete="off"></td>
             </tr>
             <tr>
                 <td>Alamat</td>
-                <td><input type="text" name="Alamat"></td>
+                <td><input type="text" id="Alamat" name="Alamat" required="" autocomplete="off"></td>
             </tr>
             <tr>
-                <td></td>
-                <td><input type="submit" value="SIMPAN"></td>
+                <button type="submit" name="tambah">Tambahkan data mahasiswa</button>
             </tr>
         </table>
     </form>
     <br />
-    <h6>Data Mahasiswa yang telah diinput : </h6>
+    <h6>Data Mahasiswa yang telah diinput : </h6> <!--menampilkan seluruh data mahasiswa yang sudah diinputkan-->
     <table border="1">
         <tr>
             <th>NO</th>
@@ -44,26 +68,20 @@
             <th>Alamat</th>
             <th>Menu</th>
         </tr>
-        <?php
-        include 'koneksi.php';
-        $no = 1;
-        $data = mysqli_query($koneksi, "SELECT * FROM datamahasiswa");
-        while ($d = mysqli_fetch_array($data)) {
-        ?>
+        <?php $i = 1; ?> <!--menginisialisasi nilai variabel i-->
+        <?php foreach ($mhs as $data) : ?>
             <tr>
-                <td><?php echo $no++; ?></td>
-                <td><?php echo $d['NIM']; ?></td>
-                <td><?php echo $d['Nama']; ?></td>
-                <td><?php echo $d['Alamat']; ?></td>
-                <td>
-                    <a href="lihat.php?NIM=<?php echo $d['NIM']; ?>">lihat</a>
-                    <a href="edit.php?NIM=<?php echo $d['NIM']; ?>">edit</a>
-                    <a href="hapus.php?NIM=<?php echo $d['NIM']; ?>">hapus</a>
+                <td><?= $i; ?> </td> <!--Menjadikan nilai i sebagai pengisi kolom nomor-->
+                <td><?= $data["NIM"]; ?></td>
+                <td><?= $data["Nama"]; ?></td>
+                <td><?= $data["Alamat"]; ?></td>
+                <td><a href="lihat.php?id=<?= $data['id']; ?>">lihat</a>
+                    <a href="edit.php?id=<?= $data['id']; ?>">edit</a>
+                    <a href="hapus.php?id=<?= $data['id']; ?>">hapus</a>
                 </td>
             </tr>
-        <?php
-        }
-        ?>
+            <?php $i++; ?> <!--increment untuk variabel i-->
+        <?php endforeach; ?> <!--akhir looping-->
     </table>
 </body>
 
