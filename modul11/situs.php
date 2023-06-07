@@ -35,9 +35,7 @@ if (isset($_POST["tambah"])) {
 
 <body>
     <h3 align="center">Data Mahasiswa</h3>
-    <h5>Silahkan input datanya</h5>
-    <br />
-    <br />
+    <h3>Silahkan input datanya</h3>
     <!--form untuk menambahkan data baru-->
     <form action="" method="post">
         <table>
@@ -59,7 +57,7 @@ if (isset($_POST["tambah"])) {
         </table>
     </form>
     <br />
-    <h6>Data Mahasiswa yang telah diinput : </h6> <!--menampilkan seluruh data mahasiswa yang sudah diinputkan-->
+    <h3>Data Mahasiswa yang telah diinput : </h3> <!--menampilkan seluruh data mahasiswa yang sudah diinputkan-->
     <table border="1">
         <tr>
             <th>NO</th>
